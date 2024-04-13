@@ -4,17 +4,15 @@ class FlowerLogo extends StatelessWidget {
   final double size;
   final Color color;
 
-  const FlowerLogo({
-    Key? key,
-    required this.size,
-    required this.color,
-  }) : super(key: key);
+  // TODO 1: Replace this non working constructor with one that matches the way we instantiate this class in main.dart.
+  const FlowerLogo();
 
   @override
   Widget build(BuildContext context) {
     final circleSize = size / 2;
     final gapSize = size / 10;
 
+    // TODO 0: What is the main purpose of the Stack widget? What do we use it for? Please answer this question in this very comment.
     return Stack(
       children: [
         // We require some non-Positioned widget so Stack can get its size.
