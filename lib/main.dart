@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 // TODO 6: Add missing import here.
+import 'widgets/setting_card.dart';
+import 'widgets/flower_logo.dart';
+
 
 void main() {
   // TODO 2: Add something inside runApp(); so the app works as expected (tip: super short line!).
-  runApp();
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,6 +18,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // TODO 3: What's the purpose of using a Scaffold widget here? Please answer this question in this very comment.
+      //El Scaffold o en español, andamio, me proporciona una estructura estandar para contruir mi Screen, cuenta con   AppBar, Body,
+      //botónFlotanteDeAcción,  Un Drawer o panel de navegacion lateral, y una BottonBarNAvigation o barra de navegación inferior
       home: Scaffold(
         backgroundColor: Colors.grey[50],
         body: SafeArea(
@@ -26,8 +31,12 @@ class MyApp extends StatelessWidget {
                 color: color,
               ),
               Column(
-                children: const [
-                  // TODO 4: Add some settings here using our function defined at the bottom of this file.
+                children:  [
+                  // TODO 4: Add some settings aquí using our function defined at the bottom of this file.
+                  settingCard(icon:Icons.wifi, text:'Wifi', value:true),
+                  settingCard(icon:Icons.bluetooth, text:'Bluetooth', value:false),
+                  settingCard(icon:Icons.dark_mode, text:'Modo oscuro', value:false),
+
                 ],
               ),
             ],
@@ -40,43 +49,5 @@ class MyApp extends StatelessWidget {
   // We are going to use this widget many times, so it makes sense to extract it to
   // avoid code repetition. In fact, even if we are only going to use it once, it may
   // be a good idea to extract widgets into their own functions or classes.
-  Widget settingCard(
-      {required IconData icon, required String text, required bool value}) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 12.0),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Row(
-                children: [
-                  Icon(
-                    icon,
-                    size: 30.0,
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    text,
-                    textAlign: TextAlign.left,
-                    style: const TextStyle(
-                      fontSize: 18.0,
-                    ),
-                  ),
-                ],
-              ),
-              Switch(
-                  value: value,
-                  activeColor: color,
-                  onChanged: (bool newValue) {
-                    // TODO 5: Why do you think this switch does not switch values on screen but this code is actually executed? Please answer this question in this very comment.
-                    // ignore: avoid_print
-                    print('Why does this switch not switch values...?');
-                  }),
-            ]),
-      ),
-    );
-  }
+ 
 }

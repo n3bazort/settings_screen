@@ -5,7 +5,7 @@ class FlowerLogo extends StatelessWidget {
   final Color color;
 
   // TODO 1: Replace this non working constructor with one that matches the way we instantiate this class in main.dart.
-  const FlowerLogo();
+  const FlowerLogo({ required this.color, required this.size});
 
   @override
   Widget build(BuildContext context) {
