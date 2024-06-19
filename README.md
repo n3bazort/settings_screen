@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-![ScreenFinalidada de la practica](screenFinalizada.png)
+![ScreenFinalidada de la practica](ScreenFinalizada.png)
 ## Getting Started
 
 This project is a starting point for a Flutter application.
